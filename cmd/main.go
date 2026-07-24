@@ -24,7 +24,7 @@ func main() {
 
 	go func() {
 		if err := http.ListenAndServe(fmt.Sprintf("localhost:%d", cfg.Port), router); err != nil {
-			panic(err)
+			panic("Panic in server listener")
 		}
 	}()
 

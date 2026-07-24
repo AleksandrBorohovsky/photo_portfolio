@@ -1,0 +1,17 @@
+{{ define "header" }}
+<header x-data="{ menuOpen: false }"> <!-- Alpine.js для управления меню -->
+    <nav>
+        <a href="/">Главная</a>
+        <div x-data="{open: false}">
+            <div class="cursor-pointer hover:bg-gray-100" @click="open = !open">Портфолио</div>
+            <div  x-show="open" @click.outside="open = false">
+                <ul>
+                    <li>Индивидуальная съемка</li>
+                    <li>Парная съемка</li>
+                    <li>Love story</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+{{ end }}
