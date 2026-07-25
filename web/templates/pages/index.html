@@ -1,9 +1,369 @@
+{{ define "title" }}Портретный фотограф в Минске — Кислая Полина{{ end }}
 {{ define "content" }}
-    <h1 class="text-3xl font-bold">Добро пожаловать!</h1>
-    <p>Это главная страница моего портфолио.</p>
-    <div x-data="{ count: 0 }">
-        <button @click="count++" class="bg-blue-500 px-4 py-2 text-white rounded">
-            Нажали: <span x-text="count"></span> раз
-        </button>
+
+<!-- ===== HERO ===== -->
+<section class="relative h-[70vh] sm:h-[85vh] overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1400&h=900&fit=crop" alt=""
+        class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black/20"></div>
+
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+        <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-bold tracking-wide mb-4">
+            Кислая Полина
+        </h1>
+        <p class="text-sm sm:text-base uppercase tracking-[0.3em] font-light opacity-80">
+            Портретный фотограф в Минске
+        </p>
+
+        <!-- Scroll hint -->
+        <div class="absolute bottom-8 animate-bounce">
+            <svg class="w-5 h-5 opacity-60" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+        </div>
     </div>
+</section>
+
+
+<!-- ===== WELCOME ===== -->
+<section class="max-w-3xl mx-auto px-6 py-20 sm:py-28 text-center">
+
+    <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-8">
+        Добро пожаловать!
+    </h2>
+
+    <div class="space-y-5 text-gray-600 leading-relaxed text-base sm:text-lg">
+        <p>
+            Меня зовут <strong class="text-gray-800">Полина</strong>, я фотограф-портретист в Минске.
+            Искренне люблю людей, поэтому на моих снимках вы всегда получаетесь красивыми.
+        </p>
+        <p>
+            Семейные фотосессии я снимаю в стиле lifestyle — это значит «нет»
+            натянутым улыбкам и вынужденным позам и «да» живым фотографиям ваших близких.
+            Такие съёмки комфортнее всего проводить дома, на прогулке в городе,
+            на природе или в минималистичных студиях.
+        </p>
+        <p>
+            Женский портрет для меня — особенный. Поэтому, по словам моих клиенток,
+            фотосессия получается настоящей терапией любви к себе.
+        </p>
+        <p>
+            Снимаю мужской портрет, истории любви и маленькие свадьбы, влюблённых
+            в своё дело профессионалов, контент для ваших блогов и репортаж с ваших
+            маленьких праздников.
+        </p>
+        <p>
+            В моей фотографии нет места тотальной ретуши, я не рисую макияж и не меняю
+            ваши индивидуальные черты лица. Снимки отдаются в цветокоррекции и лёгкой
+            ретуши крупных планов.
+        </p>
+    </div>
+
+    <div class="mt-10">
+        <a href="tel:+375333916435"
+            class="inline-block text-2xl sm:text-3xl font-heading font-semibold text-gray-800 hover:text-gray-600 transition-colors tracking-wide">
+            +375 33 391 64 35
+        </a>
+    </div>
+
+</section>
+
+
+<!-- ===== CATEGORIES ===== -->
+<section class="px-4 sm:px-6 pb-16 sm:pb-24">
+    <div class="max-w-6xl mx-auto">
+
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-center mb-12">
+            Направления съёмки
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 sm:gap-2">
+
+            <!-- Individual -->
+            <a href="/individual" class="group relative aspect-4/5 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&h=750&fit=crop"
+                    alt="Индивидуальная съёмка"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors duration-500"></div>
+                <div class="absolute inset-0 flex items-end justify-center pb-6">
+                    <span class="text-white text-sm uppercase tracking-[0.25em] font-medium">
+                        Индивидуальная
+                    </span>
+                </div>
+            </a>
+
+            <!-- Couple -->
+            <a href="/couple" class="group relative aspect-4/5 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=750&fit=crop"
+                    alt="Парная съёмка"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors duration-500"></div>
+                <div class="absolute inset-0 flex items-end justify-center pb-6">
+                    <span class="text-white text-sm uppercase tracking-[0.25em] font-medium">
+                        Парная
+                    </span>
+                </div>
+            </a>
+
+            <!-- Love Story -->
+            <a href="/love-story" class="group relative aspect-4/5 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&h=750&fit=crop"
+                    alt="Love story"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors duration-500"></div>
+                <div class="absolute inset-0 flex items-end justify-center pb-6">
+                    <span class="text-white text-sm uppercase tracking-[0.25em] font-medium">
+                        Love Story
+                    </span>
+                </div>
+            </a>
+
+            <!-- Family -->
+            <a href="/family" class="group relative aspect-4/5 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=750&fit=crop"
+                    alt="Семейная съёмка"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors duration-500"></div>
+                <div class="absolute inset-0 flex items-end justify-center pb-6">
+                    <span class="text-white text-sm uppercase tracking-[0.25em] font-medium">
+                        Семейная
+                    </span>
+                </div>
+            </a>
+
+            <!-- Events -->
+            <a href="/events" class="group relative aspect-4/5 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=750&fit=crop"
+                    alt="Мероприятия"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors duration-500"></div>
+                <div class="absolute inset-0 flex items-end justify-center pb-6">
+                    <span class="text-white text-sm uppercase tracking-[0.25em] font-medium">
+                        Мероприятия
+                    </span>
+                </div>
+            </a>
+
+            <!-- Video (optional bonus) -->
+            <a href="/prices/video" class="group relative aspect-4/5 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=750&fit=crop"
+                    alt="Видеосъёмка"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors duration-500"></div>
+                <div class="absolute inset-0 flex items-end justify-center pb-6">
+                    <span class="text-white text-sm uppercase tracking-[0.25em] font-medium">
+                        Видео
+                    </span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== GALLERY ===== -->
+<section class="px-1 sm:px-2 pb-16 sm:pb-24">
+    <div class="max-w-7xl mx-auto">
+
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-center mb-12">
+            Избранные работы
+        </h2>
+
+        <div class="columns-2 md:columns-3 lg:columns-4 gap-1 sm:gap-2 space-y-1 sm:space-y-2">
+
+            <!-- Row of images — columns CSS handles masonry -->
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=500&fit=crop" alt=""
+                class="w-full block">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop" alt=""
+                class="w-full block">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop" alt=""
+                class="w-full block">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=550&fit=crop" alt=""
+                class="w-full block">
+            <img src="https://images.unsplash.com/photo-1504438190342-5951e134ffee?w=400&h=480&fit=crop" alt=""
+                class="w-full block">
+            <img src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?w=400&h=520&fit=crop" alt=""
+                class="w-full block">
+            <img src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=400&h=600&fit=crop" alt=""
+                class="w-full block">
+            <img src="https://images.unsplash.com/photo-1506634572416-48cdfe530110?w=400&h=450&fit=crop" alt=""
+                class="w-full block">
+            <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&h=580&fit=crop" alt=""
+                class="w-full block">
+            <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400&h=500&fit=crop" alt=""
+                class="w-full block">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=440&fit=crop" alt=""
+                class="w-full block">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=560&fit=crop" alt=""
+                class="w-full block">
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== WHY ME ===== -->
+<section class="bg-gray-50 py-20 sm:py-28">
+    <div class="max-w-3xl mx-auto px-6">
+
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-center mb-12">
+            За что вы платите
+        </h2>
+
+        <div class="space-y-8 text-gray-600 leading-relaxed">
+            <div>
+                <h3 class="text-gray-800 font-semibold mb-1">— Подготовка к съёмке</h3>
+                <p class="text-sm sm:text-base">
+                    По запросу даю персональные рекомендации: что взять, как одеться,
+                    как собрать образ. У меня есть готовые чек-листы и подборки референсов.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-gray-800 font-semibold mb-1">— Подбор лучших локаций</h3>
+                <p class="text-sm sm:text-base">
+                    Знаю, где и в какое время будет удачный для съёмки свет.
+                    Подбираю студии и места на природе под ваш запрос.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-gray-800 font-semibold mb-1">— Работа на съёмке</h3>
+                <p class="text-sm sm:text-base">
+                    Вы не будете растерянно смотреть в камеру — я знаю, как помочь
+                    расслабиться, найти ваши удачные ракурсы и получить живые кадры
+                    без натянутых улыбок.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-gray-800 font-semibold mb-1">— Профессиональная техника</h3>
+                <p class="text-sm sm:text-base">
+                    Съёмка на профессиональную камеру с записью на две карты памяти —
+                    это гарантирует сохранность фотосессии даже при повреждении одной из них.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-gray-800 font-semibold mb-1">— Хранение материала</h3>
+                <p class="text-sm sm:text-base">
+                    Я храню весь обработанный материал. Спустя два года и даже десять лет
+                    вы сможете написать мне и получить свою съёмку, если её потеряли.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ===== EQUIPMENT ===== -->
+<section class="py-16 sm:py-20">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold mb-8">
+            На что я снимаю
+        </h2>
+
+        <ul class="space-y-2 text-gray-600 text-sm sm:text-base italic">
+            <li>Объектив Canon EF 50 mm f/1.2L USM</li>
+            <li>Объектив Canon EF 85 mm f/1.8 USM</li>
+            <li>Объектив Canon EF 35 mm f/2.0 USM</li>
+            <li>Объектив Canon EF 24 mm f/1.4L USM</li>
+            <li>Беззеркальный фотоаппарат Canon EOS R6</li>
+        </ul>
+
+    </div>
+</section>
+
+
+<!-- ===== CONTACT ===== -->
+<section class="bg-gray-50 py-20 sm:py-28">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-6">
+            Контакты
+        </h2>
+
+        <p class="text-gray-600 mb-10 leading-relaxed">
+            Для связи со мной звоните или пишите в мессенджеры.<br>
+            Буду рада обсудить вашу будущую съёмку!
+        </p>
+
+        <a href="tel:+375333916435"
+            class="inline-block text-2xl sm:text-3xl font-heading font-semibold text-gray-800 hover:text-gray-600 transition-colors tracking-wide mb-8">
+            +375 29 391 64 35
+        </a>
+
+        <div class="flex justify-center items-start gap-10 sm:gap-12">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/kislaya.polina/" target="_blank" rel="noopener noreferrer"
+                class="flex flex-col items-center gap-2 text-gray-500 hover:text-gray-800 transition-colors group w-16"
+                aria-label="Instagram">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+                <span class="text-xs uppercase tracking-wider group-hover:text-gray-800">Instagram</span>
+            </a>
+
+            <!-- Telegram -->
+            <a href="https://t.me/kislayapolina" target="_blank" rel="noopener noreferrer"
+                class="flex flex-col items-center gap-2 text-gray-500 hover:text-gray-800 transition-colors group w-16"
+                aria-label="Telegram">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0C5.371 0 0 5.371 0 12s5.371 12 12 12 12-5.371 12-12S18.629 0 12 0zM17.563 7.432l-2.157 10.166c-.162.765-.625.955-1.268.595l-3.5-2.579-1.689 1.624c-.187.187-.343.343-.703.343l.246-3.494 6.361-5.747c.277-.247-.06-.385-.432-.138l-7.859 4.949-3.387-1.062c-.736-.23-.75-.736.153-1.089l13.233-5.098c.613-.23 1.149.138.954 1.069z" />
+                </svg>
+                <span class="text-xs uppercase tracking-wider group-hover:text-gray-800">Telegram</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:kislayapolinaa@gmail.com"
+                class="flex flex-col items-center gap-2 text-gray-500 hover:text-gray-800 transition-colors group w-16"
+                aria-label="Email">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                    <path
+                        d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                </svg>
+                <span class="text-xs uppercase tracking-wider group-hover:text-gray-800">Email</span>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ===== INSTAGRAM ===== -->
+<section class="py-16 sm:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+
+        <a href="https://www.instagram.com/kislaya.polina/" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-gray-500 hover:text-gray-800 transition-colors mb-8">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+            <span class="text-sm uppercase tracking-wider font-medium">@kislaya.polina</span>
+        </a>
+
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-1">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300&h=300&fit=crop" alt=""
+                class="aspect-square object-cover w-full">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop" alt=""
+                class="aspect-square object-cover w-full">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop" alt=""
+                class="aspect-square object-cover w-full">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop" alt=""
+                class="aspect-square object-cover w-full">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt=""
+                class="aspect-square object-cover w-full">
+            <img src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=300&h=300&fit=crop" alt=""
+                class="aspect-square object-cover w-full">
+        </div>
+
+    </div>
+</section>
+
 {{ end }}

@@ -1,12 +1,14 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"log/slog"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 
 	"github.com/AleksandrBorohovsky/photo_portfolio/internal/config"
 	"github.com/AleksandrBorohovsky/photo_portfolio/internal/handlers"
@@ -22,9 +24,16 @@ func main() {
 
 	router := handlers.NewRouter()
 
+	server := &http.Server{
+		Addr:    fmt.Sprintf("0.0.0.0:%d", cfg.Port),
+		Handler: router,
+	}
+
 	go func() {
-		if err := http.ListenAndServe(fmt.Sprintf("localhost:%d", cfg.Port), router); err != nil {
-			panic("Panic in server listener")
+		log.Info("starting server", slog.String("addr", server.Addr))
+		if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+			log.Error("server error", slog.Any("error", err))
+			os.Exit(1)
 		}
 	}()
 
@@ -33,4 +42,11 @@ func main() {
 
 	sig := <-stop
 	log.Info("stopping application", slog.String("signal", sig.String()))
+
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	if err := server.Shutdown(ctx); err != nil {
+		log.Error("server shutdown error", slog.Any("error", err))
+	}
+	log.Info("server stopped gracefully")
 }

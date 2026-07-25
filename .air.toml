@@ -1,0 +1,9 @@
+#:schema https://json.schemastore.org/any.json
+
+[build]
+  cmd = "go build -o ./bin/main ./cmd/main.go"
+  bin = "./bin/main"
+  args_bin = ["--config=./config/local.yaml"]
+  kill_delay = "5s"
+  delay = 1000
+  send_interrupt = true  

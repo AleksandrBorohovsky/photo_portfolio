@@ -1,6 +1,10 @@
 
-```
 photo_portfolio
+├─ .air.toml
+├─ Makefile
+├─ README.md
+├─ bin
+│  └─ main
 ├─ cmd
 │  └─ main.go
 ├─ config
@@ -10,15 +14,23 @@ photo_portfolio
 ├─ internal
 │  ├─ config
 │  │  └─ config.go
-│  └─ handlers
-│     ├─ home
-│     │  └─ home.go
-│     └─ routes.go
+│  ├─ handlers
+│  │  ├─ home
+│  │  │  └─ home.go
+│  │  └─ routes.go
+│  ├─ middleware
+│  ├─ models
+│  ├─ render
+│  ├─ storage
+│  └─ telegram
+├─ migrations
 ├─ package-lock.json
 ├─ package.json
 ├─ pkg
 │  └─ logger
 │     └─ logger.go
+├─ templates.go
+├─ tmp
 └─ web
    └─ templates
       ├─ layouts

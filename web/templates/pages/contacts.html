@@ -1,0 +1,62 @@
+{{ define "title" }}Контакты — Кислая Полина{{ end }}
+
+{{ define "content" }}
+
+<section class="max-w-2xl xl:max-w-4xl mx-auto px-6 py-16 sm:py-24 xl:py-32 text-center">
+    <h1 class="font-heading text-3xl sm:text-4xl xl:text-5xl font-bold mb-6 xl:mb-8">Контакты</h1>
+    <p class="text-gray-600 mb-12 leading-relaxed text-base sm:text-lg xl:text-xl">
+        Для связи со мной звоните или пишите в мессенджеры.<br>
+        Буду рада обсудить вашу будущую съёмку!
+    </p>
+
+    <a href="tel:+375333916435"
+        class="inline-block text-2xl sm:text-3xl xl:text-4xl font-heading font-semibold text-gray-800 hover:text-gray-600 transition-colors tracking-wide mb-10 xl:mb-12">
+        +375 33 391 64 35
+    </a>
+
+    <div class="flex justify-center items-start gap-10 sm:gap-12 xl:gap-16 mb-16 xl:mb-20">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/kislaya.polina/" target="_blank" rel="noopener noreferrer"
+            class="flex flex-col items-center gap-2 xl:gap-3 text-gray-500 hover:text-gray-800 transition-colors group w-16 xl:w-20"
+            aria-label="Instagram">
+            <svg class="w-6 h-6 xl:w-8 xl:h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+            <span class="text-xs xl:text-sm uppercase tracking-wider group-hover:text-gray-800">Instagram</span>
+        </a>
+
+        <!-- Telegram -->
+        <a href="https://t.me/kislayapolina" target="_blank" rel="noopener noreferrer"
+            class="flex flex-col items-center gap-2 xl:gap-3 text-gray-500 hover:text-gray-800 transition-colors group w-16 xl:w-20"
+            aria-label="Telegram">
+            <svg class="w-6 h-6 xl:w-8 xl:h-8" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12 0C5.371 0 0 5.371 0 12s5.371 12 12 12 12-5.371 12-12S18.629 0 12 0zM17.563 7.432l-2.157 10.166c-.162.765-.625.955-1.268.595l-3.5-2.579-1.689 1.624c-.187.187-.343.343-.703.343l.246-3.494 6.361-5.747c.277-.247-.06-.385-.432-.138l-7.859 4.949-3.387-1.062c-.736-.23-.75-.736.153-1.089l13.233-5.098c.613-.23 1.149.138.954 1.069z" />
+            </svg>
+            <span class="text-xs xl:text-sm uppercase tracking-wider group-hover:text-gray-800">Telegram</span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:kislayapolinaa@gmail.com"
+            class="flex flex-col items-center gap-2 xl:gap-3 text-gray-500 hover:text-gray-800 transition-colors group w-16 xl:w-20"
+            aria-label="Email">
+            <svg class="w-6 h-6 xl:w-8 xl:h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                <path
+                    d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+            </svg>
+            <span class="text-xs xl:text-sm uppercase tracking-wider group-hover:text-gray-800">Email</span>
+        </a>
+    </div>
+
+    <!-- Фото -->
+    <div class="max-w-xs xl:max-w-sm mx-auto">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=400&fit=crop" alt="Кислая Полина"
+            class="w-32 h-32 xl:w-44 xl:h-44 object-cover rounded-full mx-auto mb-4 xl:mb-6">
+        <p class="font-heading text-xl xl:text-2xl font-semibold">Кислая Полина</p>
+        <p class="text-gray-500 text-sm xl:text-base">Портретный фотограф в Минске</p>
+    </div>
+</section>
+
+{{ end }}
