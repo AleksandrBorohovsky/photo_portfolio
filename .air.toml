@@ -6,4 +6,6 @@
   args_bin = ["--config=./config/local.yaml"]
   kill_delay = "5s"
   delay = 1000
-  send_interrupt = true  
+  send_interrupt = true 
+  include_ext = ["go", "html"] 
+  include_dir = ["cmd", "internal", "web/templates"]

@@ -17,12 +17,11 @@ import (
 
 func main() {
 	cfg := config.MustLoad()
-
 	log := logger.NewLogger(cfg.Env)
 
 	log.Info("config loaded", slog.Any("config", cfg))
 
-	router := handlers.NewRouter()
+	router := handlers.NewRouter(log)
 
 	server := &http.Server{
 		Addr:    fmt.Sprintf("0.0.0.0:%d", cfg.Port),
