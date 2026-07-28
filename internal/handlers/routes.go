@@ -144,6 +144,25 @@ func NewRouter(log *slog.Logger) *chi.Mux {
 		}
 	})
 
+	r.Get("/terms", func(w http.ResponseWriter, r *http.Request) {
+		log = log.With(
+			slog.String("op", "GET:/terms"),
+		)
+
+		tmpl := template.Must(shared.Clone())
+		tmpl = template.Must(tmpl.ParseFS(
+			templates.TemplatesFS,
+			"web/templates/pages/terms.html",
+		))
+
+		err := tmpl.ExecuteTemplate(w, "base", nil)
+		if err != nil {
+			log.Error("failed to execute template", slog.String("err", err.Error()))
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+	})
+
 	r.Get("/contacts", func(w http.ResponseWriter, r *http.Request) {
 		log = log.With(
 			slog.String("op", "GET:/contacts"),

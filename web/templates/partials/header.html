@@ -16,7 +16,7 @@
             @mouseleave="open = false" @click.outside="open = false">
             <span
                 class="cursor-pointer text-gray-600 hover:text-gray-900 font-medium transition-colors duration-200 flex items-center gap-0.5 text-sm tracking-wider uppercase">
-                Портфолио
+                Услуги
                 <svg class="w-2.5 h-2.5 transition-transform duration-300" :class="open ? 'rotate-180' : ''"
                     viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                     stroke-linejoin="round">
@@ -45,39 +45,11 @@
                     class="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors text-sm">Мероприятия</a>
             </div>
         </div>
-
-        <!-- СТОИМОСТЬ -->
-        <div class="relative flex flex-col items-center" x-data="{ open: false }" @mouseenter="open = true"
-            @mouseleave="open = false" @click.outside="open = false">
-            <span
-                class="cursor-pointer text-gray-600 hover:text-gray-900 font-medium transition-colors duration-200 flex items-center gap-0.5 text-sm tracking-wider uppercase">
-                Стоимость
-                <svg class="w-2.5 h-2.5 transition-transform duration-300" :class="open ? 'rotate-180' : ''"
-                    viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M1 1l4 4 4-4" />
-                </svg>
-            </span>
-            <div x-show="open" x-transition:enter="transition ease-out duration-300"
-                x-transition:enter-start="opacity-0 transform -translate-y-2"
-                x-transition:enter-end="opacity-100 transform translate-y-0"
-                x-transition:leave="transition ease-in duration-200"
-                x-transition:leave-start="opacity-100 transform translate-y-0"
-                x-transition:leave-end="opacity-0 transform -translate-y-2"
-                class="absolute left-0 top-full w-48 bg-white shadow-lg rounded-lg py-2 z-20 border border-gray-100">
-                <a href="/prices/photo"
-                    class="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors text-sm">Фотосессии</a>
-                <a href="/prices/video"
-                    class="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors text-sm">Видеосъёмка</a>
-                <a href="/prices/package"
-                    class="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors text-sm">Готовые
-                    пакеты</a>
-                <a href="/prices/extra"
-                    class="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors text-sm">Дополнительные
-                    услуги</a>
-            </div>
-        </div>
-
+        <!-- Условия -->
+        <a href="/terms"
+            class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-200 tracking-wider text-sm uppercase">
+            Условия
+        </a>
         <!-- КОНТАКТЫ -->
         <a href="/contacts"
             class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-200 tracking-wider text-sm uppercase">
